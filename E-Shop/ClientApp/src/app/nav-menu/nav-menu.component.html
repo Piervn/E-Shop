@@ -1,9 +1,18 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow"
   >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">E_Shop</a>
+    <div class="container d-flex">
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img
+          class="d-inline-block"
+          src="assets/images/logo.png"
+          alt="logo"
+          width="40"
+          height="40"
+        />
+        Offle Shop
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -26,6 +35,9 @@
             [routerLinkActiveOptions]="{ exact: true }"
           >
             <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/basket']">Basket</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/counter']"
