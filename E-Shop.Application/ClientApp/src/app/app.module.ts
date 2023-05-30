@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { BasketComponent } from './basket/basket.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     BasketComponent,
     CounterComponent,
     FetchDataComponent,
+    ProductComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
