@@ -1,15 +1,17 @@
-<div class="d-flex align-items-center gap-3">
+<div class="d-flex align-items-center gap-3 border rounded-5">
   <div class="product-image">
     <img
       [src]="product.image"
       [alt]="product.name"
-      width="200"
-      height="200"
+      class="rounded-5 max-height"
     />
   </div>
   <div class="product-info">
     <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
-    <button class="btn btn-primary btn-md">Add to basket</button>
+    <button 
+      class="btn btn-primary btn-md"
+      (click)="addToBasket(product)"
+    >Add to basket</button>
   </div>
 </div>

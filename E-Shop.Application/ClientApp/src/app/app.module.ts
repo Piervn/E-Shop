@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { BasketService } from './basket.service';
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { CategoryMenuComponent } from './category-menu/category-menu.component';
@@ -37,7 +39,9 @@ import { ProductListComponent } from './product-list/product-list.component';
       { path: 'basket', component: BasketComponent },
     ]),
   ],
-  providers: [],
+  providers: [
+    BasketService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

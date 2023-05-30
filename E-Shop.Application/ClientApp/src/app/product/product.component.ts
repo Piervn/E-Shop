@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasketService } from '../basket.service';
 
 @Component({
   selector: 'app-product',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   inputs: ['producttt'],
 })
 export class ProductComponent implements OnInit {
-  product: Product = {
+  public product: Product = {
     id: 1,
     name: 'Phone XL',
     price: 799,
@@ -15,9 +16,16 @@ export class ProductComponent implements OnInit {
     image:
       'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2022/9/pr_2022_9_9_9_30_25_22_03.jpg',
   };
-  constructor() {}
+
+  constructor(private basketService: BasketService) {
+  }
+  
+  addToBasket(product: Product) {
+    this.basketService.incrementCounter();
+  }
 
   ngOnInit(): void {}
+
 }
 
 export interface Product {
