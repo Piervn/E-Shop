@@ -22,7 +22,11 @@ export class ProductComponent implements OnInit {
 export interface Product {
   id: number;
   name: string;
-  price: number;
   description: string;
+  specification: string;
+  category: string;
+  price: number;
+  review: number;
+  quantity: number;
   image: string;
 }

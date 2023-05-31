@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Product } from '../product/product.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-product-list',
@@ -7,7 +8,7 @@ import { Product } from '../product/product.component';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [
+  products!: Product[];/*  = [
     {
       id: 1,
       name: 'Phone XL',
@@ -24,18 +25,17 @@ export class ProductListComponent implements OnInit {
       image:
         'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2022/9/pr_2022_9_9_9_30_25_22_03.jpg',
     },
-    {
-      id: 3,
-      name: 'Phone Standard',
-      price: 299,
-      description: 'Heheheheheheehhehehe',
-      image:
-        'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2022/9/pr_2022_9_9_9_30_25_22_03.jpg',
-    },
-  ];
-  constructor() {}
+    
+  ]; */
 
-  ngOnInit(): void {
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<Product[]>(baseUrl + 'productlist').subscribe(
+      (result) => {
+        this.products = result;
+      },
+      (error) => console.error(error)
+    );
   }
 
+  ngOnInit(): void {}
 }

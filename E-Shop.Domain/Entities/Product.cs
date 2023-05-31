@@ -16,5 +16,6 @@ namespace E_Shop.Domain.Entities
         public string Price { get; set; }
         public short Review { get; set; }
         public int Quantity { get; set; }
+        public string Image { get; set; }
     }
 }
