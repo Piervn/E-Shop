@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
 }
 
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   description: string;
   specification: string;

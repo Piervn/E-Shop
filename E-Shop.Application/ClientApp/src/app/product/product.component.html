@@ -1,17 +1,23 @@
-<div class="d-flex align-items-center gap-3 border rounded-5">
-  <div class="product-image">
-    <img
-      [src]="product.image"
-      [alt]="product.name"
-      class="rounded-5 max-height"
-    />
-  </div>
-  <div class="product-info">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <button 
-      class="btn btn-primary btn-md"
-      (click)="addToBasket(product)"
-    >Add to basket</button>
+<div class="card rounded-4">
+  <div class="row g-0">
+    <div class="product-image col-6 p-1">
+      <img
+        [src]="product.image"
+        [alt]="product.name"
+        class="img-fluid rounded object-fit-scale-down"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="card-body product-info">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <button
+          class="btn btn-outline-primary btn-sm"
+          (click)="addToBasket(product)"
+        >
+          Add to basket
+        </button>
+      </div>
+    </div>
   </div>
 </div>
