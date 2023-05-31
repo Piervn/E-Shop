@@ -28,12 +28,14 @@ export class ProductListComponent implements OnInit {
       id: 3,
       name: 'Phone Standard',
       price: 299,
-      description: '',
+      description: 'Heheheheheheehhehehe',
       image:
         'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2022/9/pr_2022_9_9_9_30_25_22_03.jpg',
-    }
+    },
   ];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 }
