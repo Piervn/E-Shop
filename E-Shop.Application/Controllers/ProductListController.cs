@@ -9,7 +9,7 @@ namespace E_Shop.Controllers
     [Route("[controller]")]
     public class ProductListController : Controller
     {
-        public Product[] products =
+        /*public Product[] products =
         {
             new Product()
             {
@@ -95,7 +95,7 @@ namespace E_Shop.Controllers
                 Quantity = 1,
                 Image = "https://cdn.x-kom.pl/i/setup/images/prod/big/product-medium,,2022/11/pr_2022_11_24_15_53_35_788_04.jpg"
             },
-        };
+        };*/
 
         private readonly E_ShopDbContext _eshopDbContext;
 
@@ -108,7 +108,6 @@ namespace E_Shop.Controllers
         public async Task<IActionResult> GetProducts()
         {
             return Ok(await _eshopDbContext.Product.ToListAsync());
-            //return products;
         }
     }
 }
